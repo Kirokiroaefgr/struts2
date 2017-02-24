@@ -24,7 +24,6 @@ public class LoginAction extends ActionSupport implements SessionAware {
 		String ret = ERROR;
 		LoginDAO dao = new LoginDAO();
 		LoginDTO dto = new LoginDTO();
-
 		dto = dao.select(name, password);
 		if (name.equals(dto.getName())) {
 			if (password.equals(dto.getPassword())) {
@@ -47,7 +46,7 @@ public class LoginAction extends ActionSupport implements SessionAware {
 		return password;
 	}
 
-	public void setPasswrod(String password) {
+	public void setPassword(String password) {
 		this.password = password;
 	}
 
@@ -58,5 +57,4 @@ public class LoginAction extends ActionSupport implements SessionAware {
 	public void setSession(Map<String, Object> session) {
 		this.session = session;
 	}
-
 }
